@@ -1,0 +1,15 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Droplet/Leaf Body -->
+  <path d="M100 35C100 35 45 100 45 140C45 170.376 69.6243 195 100 195C130.376 195 155 170.376 155 140C155 100 100 35 100 35Z" stroke="#f97316" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Fork Tines -->
+  <path d="M85 25V55" stroke="#f97316" stroke-width="12" stroke-linecap="round"/>
+  <path d="M100 20V55" stroke="#f97316" stroke-width="12" stroke-linecap="round"/>
+  <path d="M115 25V55" stroke="#f97316" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Fork Base -->
+  <path d="M85 55C85 65 115 65 115 55" stroke="#f97316" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Subtle Fill -->
+  <path d="M100 45C100 45 55 105 55 140C55 164.853 75.1472 185 100 185C124.853 185 145 164.853 145 140C145 105 100 45 100 45Z" fill="#f97316" fill-opacity="0.1"/>
+</svg>
