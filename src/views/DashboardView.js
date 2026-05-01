@@ -10,17 +10,17 @@ export function renderDashboard(user) {
                 </div>
                 <nav class="nav-menu">
                     <a href="#" class="nav-item active" id="nav-dashboard">
-                        <i class="ph ph-house"></i>
+                        <i class="ph-bold ph-house"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a href="#" class="nav-item" id="nav-pacientes">
-                        <i class="ph ph-users"></i>
+                    <a href="#/pacientes" class="nav-item" id="nav-pacientes">
+                        <i class="ph-bold ph-users"></i>
                         <span>Pacientes</span>
                     </a>
                 </nav>
                 <div class="sidebar-footer">
-                    <button id="logout-btn" class="btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                        <i class="ph ph-sign-out"></i>
+                    <button id="logout-btn" class="btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <i class="ph-bold ph-sign-out"></i>
                         <span>Sair</span>
                     </button>
                 </div>
