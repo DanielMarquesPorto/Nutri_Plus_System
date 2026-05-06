@@ -1077,6 +1077,7 @@ input:focus {
 
 .meal-card {
     min-width: calc((100% - 30px) / 3); /* 3 cards por tela (considerando o gap de 15px) */
+    flex: 0 0 calc((100% - 30px) / 3);
     scroll-snap-align: center;
     background: white;
     padding: 25px;
@@ -1084,6 +1085,13 @@ input:focus {
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
+}
+
+@media (max-width: 1024px) {
+    .meal-card {
+        min-width: 100%;
+        flex: 0 0 100%;
+    }
 }
 
 .carousel-nav {
