@@ -142,6 +142,18 @@ function setupAuthListeners(mode) {
     if (document.getElementById('switch-to-signup')) document.getElementById('switch-to-signup').onclick = (e) => { e.preventDefault(); currentMode = 'signup'; renderAuthView('signup'); };
     if (document.getElementById('switch-to-login')) document.getElementById('switch-to-login').onclick = (e) => { e.preventDefault(); currentMode = 'login'; renderAuthView('login'); };
 
+    document.querySelectorAll('input[type="password"]').forEach(input => {
+        const mask = input.nextElementSibling;
+        if (mask && mask.classList.contains('password-mask')) {
+            // Inicializa a máscara se o input já tiver valor (ex: autocompletar do navegador)
+            mask.innerText = '🍌'.repeat(input.value.length);
+            
+            input.addEventListener('input', () => {
+                mask.innerText = '🍌'.repeat(input.value.length);
+            });
+        }
+    });
+
     if (form) form.onsubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
