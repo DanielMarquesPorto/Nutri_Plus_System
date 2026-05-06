@@ -8,16 +8,35 @@ export function renderPatientDetail(user, patient, consultations = [], mealPlans
                     <img src="/logo.png" alt="Nutri Plus System Logo">
                     <div>Nutri Plus<span> System</span></div>
                 </div>
-                <nav class="nav-menu">
+                
+                <div class="sidebar-section-title">Navegação</div>
+                <nav class="nav-menu" style="flex: none; margin-bottom: 20px;">
                     <a href="#" class="nav-item" id="nav-dashboard">
                         <i class="ph-bold ph-house"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a href="#/pacientes" class="nav-item active" id="nav-pacientes">
-                        <i class="ph-bold ph-users"></i>
-                        <span>Pacientes</span>
+                    <a href="#/pacientes" class="nav-item" id="nav-pacientes">
+                        <i class="ph-bold ph-arrow-left"></i>
+                        <span>Voltar a Pacientes</span>
                     </a>
                 </nav>
+
+                <div class="sidebar-section-title">Menu do Paciente</div>
+                <nav class="nav-menu main-tabs-header sidebar-patient-menu" style="flex-direction: column; background: transparent; border: none; padding: 0;">
+                    <button type="button" class="nav-item main-tab-btn active" data-main-tab="dados" style="width: 100%; border-bottom: none;">
+                        <i class="ph-bold ph-user-circle"></i>
+                        <span>Dados Pessoais</span>
+                    </button>
+                    <button type="button" class="nav-item main-tab-btn" data-main-tab="consultas" style="width: 100%; border-bottom: none;">
+                        <i class="ph-bold ph-calendar"></i>
+                        <span>Consultas</span>
+                    </button>
+                    <button type="button" class="nav-item main-tab-btn" data-main-tab="planos" style="width: 100%; border-bottom: none;">
+                        <i class="ph-bold ph-fork-knife"></i>
+                        <span>Planos Alimentares</span>
+                    </button>
+                </nav>
+
                 <div class="sidebar-footer">
                     <button id="logout-btn" class="btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
                         <i class="ph-bold ph-sign-out"></i>
@@ -30,31 +49,19 @@ export function renderPatientDetail(user, patient, consultations = [], mealPlans
                 <header class="card-header" style="background: transparent; box-shadow: none; padding: 0; margin-bottom: 30px;">
                     <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                         <div style="display: flex; align-items: center; gap: 20px;">
-                            <button id="back-to-patients" class="btn-secondary" style="display: flex; align-items: center; gap: 8px; padding: 10px 15px;">
-                                <i class="ph ph-arrow-left"></i> Voltar
+                            <button id="back-to-patients" class="btn-secondary back-btn-mobile" style="display: flex; align-items: center; gap: 8px; padding: 10px 15px;">
+                                <i class="ph ph-arrow-left"></i> <span>Voltar</span>
                             </button>
                             <div>
-                                <h1 style="font-size: 1.875rem; color: var(--text-main);">${patient.nome}</h1>
+                                <h1 class="patient-name-title" style="color: var(--text-main);">${patient.nome}</h1>
                                 <p class="subtitle" style="margin-bottom: 0;">${age} anos • ${patient.sexo || 'Sexo não informado'}</p>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                <div class="profile-tabs-container profile-section">
-                    <div class="main-tabs-header">
-                        <button type="button" class="main-tab-btn active" data-main-tab="dados">
-                            <i class="ph ph-user-circle"></i> Dados do Paciente
-                        </button>
-                        <button type="button" class="main-tab-btn" data-main-tab="consultas">
-                            <i class="ph ph-calendar"></i> Consultas
-                        </button>
-                        <button type="button" class="main-tab-btn" data-main-tab="planos">
-                            <i class="ph ph-fork-knife"></i> Planos Alimentares
-                        </button>
-                    </div>
-
-                    <div class="main-tabs-content">
+                <div class="profile-tabs-container profile-section" style="border: none; box-shadow: none; background: transparent;">
+                    <div class="main-tabs-content" style="padding: 0;">
                         <!-- ABA 1: DADOS DO PACIENTE -->
                         <div class="main-tab-content active" id="main-tab-dados">
                             <form id="edit-patient-form">

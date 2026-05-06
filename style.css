@@ -461,10 +461,35 @@ input:focus {
     border: 1px dashed var(--border-color);
 }
 
+.sidebar-section-title {
+    padding: 0 25px 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.consultation-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 768px) {
+    html {
+        font-size: 14px; /* Diminui a fonte base para caber melhor na tela */
+    }
+    body, .dashboard-layout {
+        overflow-x: hidden;
+    }
     .sidebar {
         width: 70px;
         padding: 20px 0;
+    }
+    .sidebar-section-title {
+        display: none; /* Esconde textos de titulo na sidebar colapsada */
     }
     .sidebar-logo span, .nav-item span, .sidebar-footer button span {
         display: none;
@@ -472,10 +497,18 @@ input:focus {
     .main-content {
         margin-left: 70px;
         padding: 20px;
+        max-width: calc(100vw - 70px);
+        overflow-x: hidden;
     }
     .nav-item {
         padding: 12px;
         justify-content: center;
+    }
+    .patient-name-title {
+        font-size: 1.25rem !important; /* Menor no celular */
+    }
+    .back-btn-mobile span {
+        display: none; /* Deixa apenas a seta no celular */
     }
 }
 
@@ -740,6 +773,24 @@ input:focus {
     right: 0;
     height: 1px;
     background: white;
+}
+
+/* Sidebar Patient Menu Overrides */
+.sidebar-patient-menu .main-tab-btn {
+    border-bottom: none !important;
+    border-left: 3px solid transparent;
+}
+.sidebar-patient-menu .main-tab-btn.active {
+    background: white;
+    border-left-color: var(--primary-color) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.sidebar-patient-menu .main-tab-btn.active::after {
+    display: none;
+}
+.sidebar-patient-menu .main-tab-btn:hover:not(.active) {
+    background: #dcfce7;
+    color: var(--text-main);
 }
 
 .main-tabs-content {
