@@ -510,6 +510,9 @@ input:focus {
     .back-btn-mobile span {
         display: none; /* Deixa apenas a seta no celular */
     }
+    .meal-card {
+        min-width: 100%; /* Exibe apenas um card por vez no celular */
+    }
 }
 
 /* Patient List Styles */
@@ -1073,7 +1076,7 @@ input:focus {
 }
 
 .meal-card {
-    min-width: 32%; /* Ajustado para caberem 3 cards na tela */
+    min-width: calc((100% - 30px) / 3); /* 3 cards por tela (considerando o gap de 15px) */
     scroll-snap-align: center;
     background: white;
     padding: 25px;
