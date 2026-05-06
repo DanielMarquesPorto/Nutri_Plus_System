@@ -513,6 +513,16 @@ input:focus {
     .meal-card {
         min-width: 100%; /* Exibe apenas um card por vez no celular */
     }
+    .data-tabs {
+        width: 100%;
+        gap: 5px;
+    }
+    .data-tab-btn {
+        padding: 10px 5px;
+        flex: 1;
+        font-size: 0.85rem;
+        text-align: center;
+    }
 }
 
 /* Patient List Styles */
